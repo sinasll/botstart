@@ -5,6 +5,11 @@ require('dotenv').config();
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const app = express();
 
+// Add root route handler to fix "Cannot GET /"
+app.get('/', (req, res) => {
+  res.send('BLACK Mining Bot is running');
+});
+
 // Handle /start command
 bot.start((ctx) => {
   const chatId = ctx.chat.id;
