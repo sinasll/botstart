@@ -6,13 +6,16 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 const app = express();
 
 // Handle /start command
-bot.telegram.sendMessage(chatId, 
-  '*Welcome to the BLACK Mining App*\n\n' +
-  'Press *Start Mining* to begin\\. Mining will continue running in the background automatically\\.\n\n' +
-  'You can also *boost your mining power* by submitting daily codes from other users\\.',
-  { parse_mode: 'MarkdownV2' }
-);
-s
+bot.start((ctx) => {
+  const chatId = ctx.chat.id;
+  bot.telegram.sendMessage(chatId,
+    '*Welcome to the BLACK Mining App*\n\n' +
+    'Press *Start Mining* to begin\\. Mining will continue running in the background automatically\\.\n\n' +
+    'You can also *boost your mining power* by submitting daily codes from other users\\.',
+    { parse_mode: 'MarkdownV2' }
+  );
+});
+
 // Set up webhook
 app.use(bot.webhookCallback('/webhook'));
 bot.telegram.setWebhook(`${process.env.WEBHOOK_URL}/webhook`);
