@@ -8,14 +8,14 @@ const app = express();
 // Handle /start command
 bot.start((ctx) => {
   const welcomeMessage = `
-Welcome to the BLACK Mining App
+*Welcome to the BLACK Mining App*
 
-Press "Start Mining" to begin. Mining will continue running in the background automatically.
+Press *Start Mining* to begin\. Mining will continue running in the background automatically\.
 
-You can also boost your mining power by submitting daily codes from other users.
+You can also *boost your mining power* by submitting daily codes from other users\.
   `;
   
-  ctx.reply(welcomeMessage.trim());
+  ctx.reply(welcomeMessage.trim(), { parse_mode: 'MarkdownV2' });
 });
 
 // Set up webhook
