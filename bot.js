@@ -7,7 +7,15 @@ const app = express();
 
 // Handle /start command
 bot.start((ctx) => {
-  ctx.reply('Welcome to my Telegram bot! 🚀');
+  const welcomeMessage = `
+Welcome to the BLACK Mining App
+
+Press "Start Mining" to begin. Mining will continue running in the background automatically.
+
+You can also boost your mining power by submitting daily codes from other users.
+  `;
+  
+  ctx.reply(welcomeMessage.trim());
 });
 
 // Set up webhook
