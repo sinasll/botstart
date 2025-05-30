@@ -14,9 +14,11 @@ app.get('/', (req, res) => {
 bot.start((ctx) => {
   const chatId = ctx.chat.id;
   bot.telegram.sendMessage(chatId,
-    '*Welcome to the BLACK Mining App*\n\n' +
-    'Press *Start Mining* to begin\\. Mining will continue running in the background automatically\\.\n\n' +
-    'You can also *boost your mining power* by submitting daily codes from other users\\.',
+    '*Welcome to the BLACK Mining App 🏴*\n\n' +
+    'We value your time 🖤\n\n' +
+    '*Press Start Mining to begin 👾*\n' +
+    '_Mining will run automatically in the background, even if you leave the app\\._\n\n' +
+    'You can also *boost your mining power 💥* by _submitting daily codes from other users_\\.',
     { parse_mode: 'MarkdownV2' }
   );
 });
